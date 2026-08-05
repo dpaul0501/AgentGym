@@ -20,6 +20,8 @@ class CycleReport:
     status: str  # "no_action" | "rejected_offline" | "rejected_ab" | "launched"
     variant: AgentVariant
     ab_result: object | None = None
+    action: object | None = None  # the Action this cycle attempted, if any — lets a LearningRecipe
+                                   # inspect report_history to see which scopes were already tried
 
 
 def offline_improved(scores_before: list[list[Score]], scores_after: list[list[Score]]) -> bool:
@@ -76,7 +78,7 @@ class Harness:
 
         _, candidate_scores = self._evaluate(candidate)  # 5. EVALUATE (candidate)
         if not offline_improved(scores, candidate_scores):
-            report = CycleReport(status="rejected_offline", variant=current)
+            report = CycleReport(status="rejected_offline", variant=current, action=action)
             self.history.append(report)
             return report
 
@@ -84,12 +86,12 @@ class Harness:
         ab = self.deployer.ab_compare(baseline=current, candidate=candidate, release=release)  # 7. A/B
         if not ab.candidate_wins:
             self.deployer.rollback(release)
-            report = CycleReport(status="rejected_ab", variant=current, ab_result=ab)
+            report = CycleReport(status="rejected_ab", variant=current, ab_result=ab, action=action)
             self.history.append(report)
             return report
 
         self.deployer.launch(release)  # 8. LAUNCH
         self.store.save_variant(candidate)
-        report = CycleReport(status="launched", variant=candidate, ab_result=ab)
+        report = CycleReport(status="launched", variant=candidate, ab_result=ab, action=action)
         self.history.append(report)
         return report
