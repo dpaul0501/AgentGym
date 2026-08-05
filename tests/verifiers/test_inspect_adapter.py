@@ -1,12 +1,21 @@
 """Real test against the actual inspect_ai library — exact()/includes() are genuine, unmodified
 Inspect scorers, not mocked. No LLM/network call needed since these are deterministic text
-scorers, so this runs in the fast suite."""
+scorers, so this runs in the fast suite.
 
-from inspect_ai.scorer import exact, includes
+Skipped when inspect_ai isn't installed: it's declared to conflict with the `examples` extra in
+pyproject.toml (inspect-ai and langchain-aws pull incompatible datasets/aiobotocore version
+chains, confirmed via a real `uv sync` resolution failure) — the two are never installed together.
+"""
 
-from agentgym.core.protocols import Task
-from agentgym.core.trace import Span, Trace
-from agentgym.verifiers.inspect_adapter import InspectVerifier
+import pytest
+
+pytest.importorskip("inspect_ai")
+
+from inspect_ai.scorer import exact, includes  # noqa: E402
+
+from agentgym.core.protocols import Task  # noqa: E402
+from agentgym.core.trace import Span, Trace  # noqa: E402
+from agentgym.verifiers.inspect_adapter import InspectVerifier  # noqa: E402
 
 
 def _trace_with_answer(answer: str) -> Trace:
