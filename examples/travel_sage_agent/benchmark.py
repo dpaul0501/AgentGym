@@ -1,4 +1,4 @@
-"""TravelBenchmark: real Task prompts driving TravelSageAgent, used by both demo scripts."""
+"""TravelBenchmark: the Task prompts driving TravelSageAgent, used by both demo scripts."""
 
 from __future__ import annotations
 

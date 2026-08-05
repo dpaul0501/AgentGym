@@ -1,11 +1,11 @@
-"""Two real LLM backends for the Travel Sage agent, chosen per-demo:
+"""Two LLM backends for the Travel Sage agent, chosen per-demo:
 
 - Bedrock Claude (build_bedrock_llm) — the production-grade model, used for the MEMORY/context-
-  lever demo. Wired from RL-agents/.env, the same credentials/model IDs already exercised
-  elsewhere in this workspace.
-- Local Ollama (build_ollama_llm) — a realistic stand-in for a cheaper/self-hosted model tier,
-  used for the GUARDRAILS/harness-lever demo. garak audits THIS model for real, so the demo
-  reflects an actual measured vulnerability, not a scripted one.
+  lever demo. Wired from RL-agents/.env, the same credentials/model IDs already used elsewhere in
+  this workspace.
+- Local Ollama (build_ollama_llm) — a stand-in for a cheaper/self-hosted model tier, used for the
+  GUARDRAILS/harness-lever demo. garak audits this model directly, so the demo reflects a measured
+  vulnerability rather than a scripted one.
 """
 
 from __future__ import annotations

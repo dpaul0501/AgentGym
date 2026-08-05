@@ -1,6 +1,6 @@
-"""Light smoke tests for the Travel Sage example agent (per the user's choice: real smoke
-coverage, not full red-green TDD per class, given presentation-deadline time pressure). The
-offline tests need no network; the two integration tests make real Bedrock/local-Ollama calls."""
+"""Light smoke tests for the Travel Sage example agent (per the user's choice: smoke coverage, not
+full red-green TDD per class, given presentation-deadline time pressure). The offline tests need
+no network; the two integration tests make Bedrock/local-Ollama calls."""
 
 import pytest
 

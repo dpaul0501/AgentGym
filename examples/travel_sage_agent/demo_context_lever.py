@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Context/memory lever demo: run the flight-search task for real against Bedrock Claude with no
-MEMORY artifact bound (raw, uncompressed tool output reaching the model — this deck's own "40
-flight results pasted in full" framing, with real numbers instead of illustrative ones); capture
-the trace into a real TrainingCorpus; run HeadroomMemoryOptimizer for real to search a compression
-config; measure the real token savings that config achieves on the same content via headroom's own
-compress(); re-run the same task with the winning MEMORY artifact bound to confirm the agent still
-answers correctly with the compressed context.
+"""Context/memory lever demo: run the flight-search task against Bedrock Claude with no MEMORY
+artifact bound (raw, uncompressed tool output reaching the model — this deck's own "40 flight
+results pasted in full" framing, with measured numbers instead of illustrative ones); capture the
+trace into a TrainingCorpus; run HeadroomMemoryOptimizer to search a compression config; measure
+the token savings that config achieves on the same content via headroom's own compress(); re-run
+the same task with the winning MEMORY artifact bound to confirm the agent still answers correctly
+with the compressed context.
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ def main() -> None:
     tool_span = next(s for s in before_trace.spans if s.kind == "tool")
     raw_output = tool_span.output
     context_chars = len(str(tool_span.input)) + len(str(raw_output))
-    print(f"Real context size from this tool call: {context_chars} chars "
+    print(f"Context size from this tool call: {context_chars} chars "
           f"({'exceeds' if context_chars > CONTEXT_BLOAT_CHARS else 'under'} the "
           f"{CONTEXT_BLOAT_CHARS}-char bloat threshold RuleBasedDiagnoser uses)")
 
@@ -49,7 +49,7 @@ def main() -> None:
         ),
     )
 
-    print("\n=== SEARCH: real HeadroomMemoryOptimizer.estimate() over real CompressConfig variants ===")
+    print("\n=== SEARCH: HeadroomMemoryOptimizer.estimate() over CompressConfig variants ===")
     optimizer = HeadroomMemoryOptimizer(n_trials=10, seed=0)
     starting_artifact = Artifact(
         scope=MEMORY, shape=ArtifactShape.CONFIG, value={}, optimizer_binding=None,
@@ -59,7 +59,7 @@ def main() -> None:
     print(f"Winning config: {memory_artifact.value}")
     print(f"Provenance: {memory_artifact.provenance}")
 
-    print("\n=== MEASURED: real headroom.compress() on the same tool output with the winning config ===")
+    print("\n=== MEASURED: headroom.compress() on the same tool output with the winning config ===")
     config = CompressConfig(
         compress_user_messages=memory_artifact.value["compress_user_messages"],
         protect_recent=memory_artifact.value["protect_recent"],

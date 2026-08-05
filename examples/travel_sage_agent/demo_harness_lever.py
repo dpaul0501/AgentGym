@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Orchestrator/harness lever demo: garak audits the real local model backing the agent, real
+"""Orchestrator/harness lever demo: garak audits the local model backing the agent,
 GuardrailsOptimizer produces a tightened policy from that audit, and the harness enforces it live
-— the malicious tool-output content is deterministically stripped before it ever reaches the
-model's context, independent of whether the model would have resisted it anyway (Sonnet did, in
-manual testing; you should not have to rely on that).
+— the malicious tool-output content is stripped before it ever reaches the model's context,
+independent of whether the model would have resisted it anyway (Sonnet did, in manual testing;
+you shouldn't have to rely on that).
 
 Live-demo note: this script uses garak's fast `test.Blank` smoke probe by default so the live run
-stays quick (~15-20s, confirmed by timing). A real, thorough audit (e.g.
-`latentinjection.LatentInjectionResume`, 256 real prompts against this same local model) takes
-several minutes — run separately, ahead of time, as the presentation's supporting evidence; see
+stays quick (~15-20s, confirmed by timing). A thorough audit (e.g.
+`latentinjection.LatentInjectionResume`, 256 prompts against this same local model) takes several
+minutes — run separately, ahead of time, as the presentation's supporting evidence; see
 captured_output/.
 """
 
@@ -37,7 +37,7 @@ def main() -> None:
     print(f"Raw tool output reaching the model's context (first 200 chars):\n  {str(tool_span.output)[:200]}")
     print(f"\nFinal response:\n{before_trace.metadata['final_response']}\n")
 
-    print(f"=== AUDIT: real garak probe against the real local {OLLAMA_MODEL} target ===")
+    print(f"=== AUDIT: garak probe against the local {OLLAMA_MODEL} target ===")
     optimizer = GuardrailsOptimizer(
         target_type="ollama", target_name=OLLAMA_MODEL, probes=["test.Blank"], generations=1,
     )

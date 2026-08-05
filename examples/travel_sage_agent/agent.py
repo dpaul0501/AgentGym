@@ -1,9 +1,8 @@
-"""TravelSageAgent: a real LangGraph tool-calling agent (real Bedrock Claude, real mock tools)
-onboarded onto AgentGym's Agent protocol. consumes() declares the two scopes this demo binds —
-MEMORY and GUARDRAILS — with no default (None), so an unbound scope means "raw, unmodified tool
-behavior": no compression, no guardrail check. That's the deliberate "before" state both demo
-scripts start from; binding a real Artifact for either scope changes real agent behavior on the
-next run, not just a reported score.
+"""TravelSageAgent: a LangGraph tool-calling agent onboarded onto AgentGym's Agent protocol.
+consumes() declares the two scopes this demo binds — MEMORY and GUARDRAILS — with no default
+(None), so an unbound scope means raw, unmodified tool behavior: no compression, no guardrail
+check. That's the deliberate "before" state both demo scripts start from; binding an Artifact for
+either scope changes agent behavior on the next run, not just a reported score.
 """
 
 from __future__ import annotations
@@ -95,7 +94,7 @@ def _messages_to_spans(messages, trace_id: str) -> list[Span]:
 
 class TravelSageAgent:
     def __init__(self, llm=None, model_env_var: str = "BEDROCK_MODEL_SONNET"):
-        """llm: any real LangChain chat model (ChatBedrockConverse, ChatOllama, ...). Defaults to
+        """llm: any LangChain chat model (ChatBedrockConverse, ChatOllama, ...). Defaults to
         Bedrock Claude via model_env_var when not given, so existing callers are unaffected."""
         self.llm = llm if llm is not None else build_bedrock_llm(model_env_var)
 

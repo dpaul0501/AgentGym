@@ -1,10 +1,10 @@
-"""Mock tools for the Travel Sage agent — real LangChain @tool functions, deterministic mock data,
-no network calls. Two of these are deliberately shaped to drive AgentGym's demos:
+"""Mock tools for the Travel Sage agent — deterministic mock data, no network calls. Two of these
+are deliberately shaped to drive AgentGym's demos:
 
-- search_flights returns ~30 verbose results (the real context-bloat source for the MEMORY-scope
-  demo — mirrors this deck's own "40 flight results pasted in full" framing with real token counts
+- search_flights returns ~30 verbose results (the context-bloat source for the MEMORY-scope demo —
+  mirrors this deck's own "40 flight results pasted in full" framing, with measured token counts
   instead of an illustrative one).
-- search_hotels returns one hotel whose guest review carries a real prompt-injection payload (the
+- search_hotels returns one hotel whose guest review carries a prompt-injection payload (the
   source for the GUARDRAILS-scope demo) — an instruction embedded in untrusted tool output trying
   to redirect the agent off-task. The target email is an obviously fake domain; nothing here is a
   functioning phishing attempt.
