@@ -40,12 +40,12 @@ memory = ["headroom-ai>=0.33", "optuna>=3.6"]
 # nltk<3.10 is pinned deliberately: invariant-ai's `testing` submodule transitively imports nltk,
 # and nltk>=3.10's CWE-427 CWD-import guard raises under uv's editable-install sys.path entry
 # when the project root equals the process cwd (confirmed directly against this repo's venv).
-# lark/termcolor/defusedxml/invariant-sdk are real, undeclared transitive deps of invariant-ai
-# itself (a real packaging gap in that package, discovered via actual ImportErrors, not assumed)
-# — pinned here explicitly so a clean `uv sync` doesn't silently drop them again.
+# lark/termcolor/defusedxml/invariant-sdk/diskcache are undeclared transitive deps of invariant-ai
+# itself (a packaging gap in that package, discovered via actual ImportErrors, not assumed) —
+# pinned here explicitly so a clean `uv sync` doesn't silently drop them again.
 security = [
     "garak>=0.15", "invariant-ai>=0.2", "nltk<3.10", "transformers", "torch",
-    "lark", "termcolor", "defusedxml", "invariant-sdk",
+    "lark", "termcolor", "defusedxml", "invariant-sdk", "diskcache",
 ]
 # examples/travel_sage_agent/ — a real external LangGraph agent onboarded onto AgentGym, used to
 # demo the MEMORY and GUARDRAILS scopes end to end. langgraph/optuna/garak/invariant-ai come from

@@ -80,6 +80,7 @@ providers = [
 ]
 security = [
     { name = "defusedxml" },
+    { name = "diskcache" },
     { name = "garak" },
     { name = "invariant-ai" },
     { name = "invariant-sdk" },
@@ -101,6 +102,7 @@ dev = [
 requires-dist = [
     { name = "boto3", marker = "extra == 'providers'", specifier = ">=1.34" },
     { name = "defusedxml", marker = "extra == 'security'" },
+    { name = "diskcache", marker = "extra == 'security'" },
     { name = "dspy", marker = "extra == 'dspy'", specifier = ">=3.2" },
     { name = "garak", marker = "extra == 'security'", specifier = ">=0.15" },
     { name = "headroom-ai", marker = "extra == 'memory'", specifier = ">=0.33" },
