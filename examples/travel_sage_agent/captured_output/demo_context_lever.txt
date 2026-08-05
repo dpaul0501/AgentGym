@@ -1,122 +1,30 @@
-INFO:langchain_aws.chat_models.bedrock_converse:Using Bedrock Converse API to generate response
-INFO:langchain_aws.chat_models.bedrock_converse:Using Bedrock Converse API to generate response
-[I 2026-08-05 13:56:41,807] A new study created in memory with name: no-name-65080090-c63b-4558-a7f6-397744f92816
-INFO:headroom.transforms.pipeline:Pipeline using ContentRouter for intelligent content-aware compression
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache misses, cache[1 results, 0 skips, 750ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_miss': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [42.8ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=43ms parallel_compress_total=33ms compressor:mixed=33ms _final_token_count=0ms pipeline_total=43ms]
-[I 2026-08-05 13:56:46,584] Trial 0 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 4, 'min_tokens_to_compress': 300}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 1396ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.1ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=4ms]
-[I 2026-08-05 13:56:46,593] Trial 1 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 3, 'min_tokens_to_compress': 450}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 1306ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,601] Trial 2 finished with value: 3424.0 and parameters: {'compress_user_messages': True, 'protect_recent': 5, 'min_tokens_to_compress': 300}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 1115ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,609] Trial 3 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 50}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 984ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,617] Trial 4 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 5, 'min_tokens_to_compress': 450}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 910ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,624] Trial 5 finished with value: 3424.0 and parameters: {'compress_user_messages': True, 'protect_recent': 3, 'min_tokens_to_compress': 400}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 845ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,632] Trial 6 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 500}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 792ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,640] Trial 7 finished with value: 3424.0 and parameters: {'compress_user_messages': True, 'protect_recent': 2, 'min_tokens_to_compress': 400}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 759ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=3ms]
-[I 2026-08-05 13:56:46,648] Trial 8 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 350}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 6 msgs — 1 compressed (mixed:0.32), 5 non-string, 1 cache hits, cache[1 results, 0 skips, 729ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'non_string': 5, 'cache_hit': 1} compressed=1 frozen=0 msgs=6
-INFO:headroom.transforms.pipeline:Transform content_router: 7969 -> 4545 tokens (saved 3424) [3.1ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6323 -> 2899 tokens (saved 3424, 54.2% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=3ms _final_token_count=0ms pipeline_total=4ms]
-[I 2026-08-05 13:56:46,656] Trial 9 finished with value: 3424.0 and parameters: {'compress_user_messages': False, 'protect_recent': 6, 'min_tokens_to_compress': 350}. Best is trial 0 with value: 3424.0.
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 1 msgs — 1 compressed (mixed:0.32), 1 cache hits, cache[1 results, 0 skips, 712ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'cache_hit': 1} compressed=1 frozen=0 msgs=1
-INFO:headroom.transforms.pipeline:Transform content_router: 6289 -> 2865 tokens (saved 3424) [2.5ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6296 -> 2872 tokens (saved 3424, 54.4% reduction) [_deep_copy=0ms _initial_token_count=1ms content_router=2ms _final_token_count=0ms pipeline_total=3ms]
-INFO:langchain_aws.chat_models.bedrock_converse:Using Bedrock Converse API to generate response
-WARNING:headroom_core.transforms.detection:magika detection failed; falling through to unidiff tier error=magika session init failed: no pip onnxruntime native library was found for Magika dynamic ONNX Runtime loading; install headroom-ai[proxy], install onnxruntime, or set ORT_DYLIB_PATH
-INFO:headroom.transforms.content_router:content_router: 1 msgs — 1 compressed (mixed:0.32), 1 cache hits, cache[1 results, 0 skips, 983ns avg]
-INFO:headroom.transforms.content_router:[router] route_counts={'cache_hit': 1} compressed=1 frozen=0 msgs=1
-INFO:headroom.transforms.pipeline:Transform content_router: 6289 -> 2865 tokens (saved 3424) [9.0ms]
-INFO:headroom.transforms.pipeline:Pipeline complete: 6296 -> 2872 tokens (saved 3424, 54.4% reduction) [_deep_copy=0ms _initial_token_count=5ms content_router=9ms _final_token_count=1ms pipeline_total=10ms]
-INFO:langchain_aws.chat_models.bedrock_converse:Using Bedrock Converse API to generate response
-=== BEFORE: MEMORY unbound — raw tool output reaches the model ===
-Real context size from this tool call: 23428 chars (exceeds the 4000-char bloat threshold RuleBasedDiagnoser uses)
+[I 2026-08-05 14:42:52,044] A new study created in memory with name: no-name-b447ad3a-c609-4fc6-a4c2-44180605c574
+[I 2026-08-05 14:42:52,273] Trial 0 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 4, 'min_tokens_to_compress': 300}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,304] Trial 1 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 3, 'min_tokens_to_compress': 450}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,335] Trial 2 finished with value: 13696.0 and parameters: {'compress_user_messages': True, 'protect_recent': 5, 'min_tokens_to_compress': 300}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,365] Trial 3 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 50}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,396] Trial 4 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 5, 'min_tokens_to_compress': 450}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,426] Trial 5 finished with value: 13696.0 and parameters: {'compress_user_messages': True, 'protect_recent': 3, 'min_tokens_to_compress': 400}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,457] Trial 6 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 500}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,487] Trial 7 finished with value: 13696.0 and parameters: {'compress_user_messages': True, 'protect_recent': 2, 'min_tokens_to_compress': 400}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,518] Trial 8 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 1, 'min_tokens_to_compress': 350}. Best is trial 0 with value: 13696.0.
+[I 2026-08-05 14:42:52,549] Trial 9 finished with value: 13696.0 and parameters: {'compress_user_messages': False, 'protect_recent': 6, 'min_tokens_to_compress': 350}. Best is trial 0 with value: 13696.0.
+=== BEFORE: MEMORY unbound, 4 independent flight-search trials ===
+  [San Francisco -> New York] 23428 chars, response looks correct
+  [Los Angeles -> Chicago] 23335 chars, response looks correct
+  [Seattle -> Boston] 23180 chars, response looks correct
+  [Miami -> Denver] 23118 chars, response looks correct
+Metric: 93061 total chars, 4/4 correct
 
-=== SEARCH: real HeadroomMemoryOptimizer.estimate() over real CompressConfig variants ===
+=== SEARCH: HeadroomMemoryOptimizer.estimate() over CompressConfig variants (trained on all 4 trials) ===
 Winning config: {'compress_user_messages': False, 'protect_recent': 4, 'min_tokens_to_compress': 300, 'model': 'gpt-4o'}
-Provenance: {'n_trials': 10, 'best_tokens_saved': 3424.0, 'n_trajectories': 1}
+Provenance: {'n_trials': 10, 'best_tokens_saved': 13696.0, 'n_trajectories': 4}
 
-=== MEASURED: real headroom.compress() on the same tool output with the winning config ===
-tokens_before=6296 tokens_after=2872 tokens_saved=3424 ratio=54.38%
+=== AFTER: MEMORY bound, same 4 trials re-run live ===
+  [San Francisco -> New York] 9541 chars, response looks correct
+  [Los Angeles -> Chicago] 9448 chars, response looks correct
+  [Seattle -> Boston] 9293 chars, response looks correct
+  [Miami -> Denver] 9231 chars, response looks correct
+Metric: 37513 total chars, 4/4 correct
 
-=== AFTER: MEMORY bound — re-run the same task with the winning config applied live ===
-Final response:
-Here are the available flights from **San Francisco → New York** on **Tuesday, July 15, 2025**:
-
----
-
-### ✈️ Flight Results — SFO to NYC | July 15, 2025
-
-| # | Flight | Airline | Departs | Arrives | Duration | Stops | Price | Aircraft |
-|---|--------|---------|---------|---------|----------|-------|-------|----------|
-| 1 | SK100 | SkyLink | 6:00 AM | 9:00 AM | 2h 00m | ✅ Nonstop | **$180** | A320 |
-| 2 | CO101 | Continental Air | 7:07 AM | 10:13 AM | 2h 15m | 1 stop | $197 | B737 |
-| 3 | BL102 | BlueHorizon | 8:14 AM | 11:26 AM | 2h 30m | 2 stops | $214 | A350 |
-| 4 | PA103 | Pacific Express | 9:21 AM | 12:39 PM | 2h 45m | ✅ Nonstop | $231 | B787 |
-| 5 | AU104 | Aurora Airways | 10:28 AM | 1:52 PM | 3h 00m | 1 stop | $248 | A320 |
-| 6 | SK105 | SkyLink | 11:35 AM | 2:05 PM | 3h 15m | 2 stops | $265 | B737 |
-| 7 | CO106 | Continental Air | 12:42 PM | 3:18 PM | 3h 30m | ✅ Nonstop | $282 | A350 |
-| 8 | BL107 | BlueHorizon | 1:49 PM | 4:31 PM | 3h 45m | 1 stop | $299 | B787 |
-| 9 | PA108 | Pacific Express | 2:56 PM | 5:44 PM | 2h 00m | 2 stops | $316 | A320 |
-| 10 | AU109 | Aurora Airways | 3:03 PM | 6:57 PM | 2h 15m | ✅ Nonstop | $333 | B737 |
-
-*(+ 20 more flights available throughout the day)*
-
----
-
-### 🏆 Top Picks at a Glance:
-- 💰 **Best Price:** SK100 (SkyLink) — **$180**, Nonstop, departs 6:00 AM
-- ⚡ **Best Value Nonstop:** SK100 or PA103 — both nonstop, from $180–$231
-- 🕐 **Most Flexible Timing:** Multiple nonstop options at 6:00 AM, 9:21 AM, 12:42 PM, and 3:03 PM
-
----
-
-> **Cancellation Policy (all flights):** Non-refundable fares may be changed for a **$75 fee** + fare difference. Refundable fares can be cancelled up to **24 hours before departure** for a full refund.
-
-Would you like to book one of these flights, see more options, or also search for hotels in New York? 🗽
+=== RESULT: context size 93061 -> 37513 chars (59.7% reduction), correctness 4/4 -> 4/4 ===

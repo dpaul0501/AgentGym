@@ -8,7 +8,13 @@ from agentgym.core.protocols import Task
 from agentgym.core.scope import GUARDRAILS, MEMORY
 from examples.travel_sage_agent.agent import TravelSageAgent
 from examples.travel_sage_agent.benchmark import TravelBenchmark
-from examples.travel_sage_agent.tools import INJECTION_PAYLOAD, get_weather, search_flights, search_hotels
+from examples.travel_sage_agent.tools import (
+    INJECTION_PAYLOAD,
+    INJECTION_PAYLOADS,
+    get_weather,
+    search_flights,
+    search_hotels,
+)
 
 
 def test_search_flights_returns_verbose_mock_listings():
@@ -23,16 +29,27 @@ def test_search_hotels_includes_the_injection_payload():
     assert INJECTION_PAYLOAD in reviews
 
 
+def test_search_hotels_uses_a_distinct_payload_per_city():
+    for city, payload in INJECTION_PAYLOADS.items():
+        hotels = search_hotels.func(city, "2026-09-01", "2026-09-04")
+        assert payload in [h["review"] for h in hotels]
+    assert len(set(INJECTION_PAYLOADS.values())) == len(INJECTION_PAYLOADS)  # all distinct
+
+
 def test_get_weather_returns_well_formed_mock_data():
     weather = get_weather.func("Paris")
     assert weather["city"] == "Paris"
     assert "forecast" in weather
 
 
-def test_travel_benchmark_has_real_task_prompts():
-    cases = TravelBenchmark().cases()
-    assert len(cases) >= 2
-    assert all(isinstance(c, Task) for c in cases)
+def test_travel_benchmark_has_multiple_trials_per_demo_scenario():
+    benchmark = TravelBenchmark()
+    flight_cases = benchmark.flight_search_cases()
+    hotel_cases = benchmark.hotel_search_cases()
+    assert len(flight_cases) >= 3  # multi-trial, not a single anecdote
+    assert len(hotel_cases) == len(INJECTION_PAYLOADS)
+    assert all(isinstance(c, Task) for c in flight_cases + hotel_cases)
+    assert benchmark.cases() == flight_cases + hotel_cases
 
 
 def test_agent_consumes_declares_memory_and_guardrails_with_no_default():
