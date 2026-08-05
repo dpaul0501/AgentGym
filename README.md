@@ -7,11 +7,9 @@ AgentGym doesn't build its own evaluation engine, orchestration framework, or tr
 defines a small set of protocols that let actively-maintained tools plug into one shared
 representation, and ships reference adapters proving those protocols work end to end.
 
-**Status: v0 and v1 complete.** All nine scopes have a reference `ScopeOptimizer`, the full
-eight-stage `Harness` lifecycle (Existing → Evaluate → Diagnose → Improve → Evaluate → Release →
-A/B → Launch) is implemented end to end, and 169 tests pass (155 fast + 14 integration). See
-`docs/DESIGN.md` for the full design and `docs/IMPLEMENTATION_PLAN.md` for the class-by-class,
-test-driven build plan.
+All nine scopes have a reference `ScopeOptimizer`, the full eight-stage `Harness` lifecycle
+(Existing → Evaluate → Diagnose → Improve → Evaluate → Release → A/B → Launch) is implemented end
+to end, and 169 tests pass (155 fast + 14 integration). See `docs/DESIGN.md` for the full design.
 
 | Scope | Lever | Optimizer |
 |---|---|---|
